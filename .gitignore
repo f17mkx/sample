@@ -1,5 +1,9 @@
 # Ignore everything in this directory
-*
+#*
 # Except
-!img/
-!.gitignore
+awp/
+cla/
+syb/
+robert/
+img2/
+#.gitignore
