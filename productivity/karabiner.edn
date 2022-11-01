@@ -584,7 +584,7 @@
     }
    { :des  "homeassistant remote emulator"
      :rules
-     [ [ :condi  :disabeld  ]
+     [ [ :condi  :move ]
        [ :semicolon     [:hass "r: on_press"]     nil  {:afterup [:hass "r: on_press_release"]}   ]
        [ :k             [:hass "r: up_press"]     nil  {:afterup [:hass "r: up_press_release"]}   ]
        [ :l             [:hass "r: down_press"]   nil  {:afterup [:hass "r: down_press_release"]} ]
