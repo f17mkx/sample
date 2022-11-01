@@ -1,0 +1,10 @@
+1.a Account class    		1/1 points    
+1.b Main application 		1/1 points
+1.c Minimum balance  		1/1 points 
+1.d Apply interest   		1/1 points
+1.e __str__ method   		1/1 points
+2.a Employee class   		2/2 points
+2.b Employee objects 		1/1 points
+2.c Department dictionary   	2/2 points
+######################################
+TOTAL: 10/10 points  

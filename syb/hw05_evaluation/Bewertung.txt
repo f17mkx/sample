@@ -1,0 +1,8 @@
+evaluation.precision             OK        2/2 points
+evaluation.recall                OK        2/2 points
+evaluation.f1                    OK        1/1 points
+evaluation.get_rel_freq          OK        1/1 points
+evaluation.get_rel_freq_ham      OK        1/1 points
+evaluation.get_rel_freq_spam     OK        1/1 points
+####################################
+TOTAL: 8/8 points

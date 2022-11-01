@@ -1,0 +1,5 @@
+(S (NP (DT This)) (VP (VBZ is) (NP (DT a) (NN sentence))))
+(SBARQ (WHADVP-1 (WRB Where)) (SQ (VBZ is) (NP (DT the) (NN man)) (ADVP *T*-1)))
+(S (NP (DT Th is)) (VP (VBZ is) (NP (DT a) (NN sentence))))
+(SBARQ (WHADVP-1 (WRB Where)) (SQ (VBZ is) (NP (DT the) (NN man)) (ADVP *T*)))
+(SBARQ (WHADVP (WRB Where) (AB-1 (CD ef))) (SQ (VBZ is) (NP (DT the) (NN man)) (ADVP *T*-1)))

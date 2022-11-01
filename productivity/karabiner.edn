@@ -1,0 +1,599 @@
+{
+:profiles {
+     :Default {
+         :default true
+         :sim     100
+         :delay   3000
+         :alone   500
+         :held    200
+         }
+     :Tapping {
+         :default false
+         :sim     100
+         :delay   200
+         :alone   200
+         :held    1000
+         }
+     }
+:templates {
+     :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"
+     :open "osascript -e 'tell application \"%s\" to activate'"
+     :audio "/opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t input -s '%s'
+             /opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t output -s '%s'"
+     :audio-in  "/opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t input -s '%s'"
+     :audio-out "/opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t output -s '%s'"
+     :hass "curl -k -X POST -H 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' -H 'Content-Type: application/json' -d '{\"entity_id\": \"input_text.superpro_master\", \"value\": \"%s\"}' https://f17.duckdns.org:443/api/services/input_text/set_value"
+     :paste "osascript -e '
+           set the clipboard to \"%s\"
+           set the clipboard to the clipboard + \"%s\"
+           tell application \"System Events\"
+                   keystroke \"v\" using command down
+           end tell
+           '"
+     }
+:layers {
+     :tab-mode {:key :tab}
+     }
+:devices  {
+     :appl  [ { :vendor_id  1452, :product_id   835} ]
+     :moon  [ { :vendor_id 12951, :product_id  6505} ]
+     :g600  [ { :vendor_id  1133, :product_id 49738, :location_id 34673456}]
+     }
+:applications {
+     :fantastical   [ "com.flexibits.fantastical2.mac" ]
+     :pdf           [ "com.readdle.PDFExpert-Mac" ]
+     :firefox       [ "org.mozilla.firefox" ]
+     :finalcut      [ "com.apple.FinalCut" ]
+     :finder        [ "com.apple.finder" ]
+     :jetbrains     [ "com.jetbrains.",
+                      "com.jetbrains.pycharm"]
+     :editor        [ "com.jetbrains.intellij",
+                      "com.microsoft.VSCode",
+                      "com.jetbrains.pycharm" ]
+     :plex          [ "tv.plex.desktop"]
+     :iterm         [ "com.googlecode.iterm2" ]
+     }
+:froms {
+     }
+:tos {
+     :lazy_shift   { :key :left_shift              :lazy true            }
+     :lazy_command { :key :left_command            :lazy true            }
+     :command_held  { :key :left_command :lazy true :halt true  :hold_down_ms 300}
+     :lazy_option  { :key :left_option             :lazy true            }
+     :lazy_control { :key :left_control            :lazy true            }
+     :single_semicolon  { :key :!Scomma :halt false       }
+     :single_colon  { :key :!Speriod :halt false       }
+     :single_underscore  { :key :!Speriod :halt false       }
+}
+:main [
+  { :des  "plex apple"
+    :rules
+    [
+      [ :condi :appl :plex ]
+      [ :##non_us_backslash   ["plex_1" 1]   ["plex_1" 0] ]
+      [ :##non_us_backslash   ["plex_1" 0]   ["plex_1" 1] ]
+      [ :condi :appl :plex :plex_1 ]
+      [ :r :escape]
+      [ :h [:g :h]]
+      [ :z [:g :s]]
+      [ :t [:g :d]]
+      [ :e [:g :u]]
+      [ :w [:g :j]]
+      [ :left_command :backslash]
+      [ :p :p]
+      [ :u :w]
+      [ :a :e]
+      [ :i :i]
+      [ :a :!Ss]
+      [ :a :spacebar]
+      [ :escape :f]
+      [ :backslash :up_arrow]
+      [ :close_bracket :down_arrow]
+      [ :d nil nil
+         { :alone :left_arrow
+           :held  :!Oleft_arrow :halt false        :params { :alone 200 :held 200} } ]
+      [ :s nil nil
+         { :alone :right_arrow
+           :held  :!Oright_arrow :halt false        :params { :alone 200 :held 200} } ]
+      [ :g nil nil
+         { :alone :p
+           :held  :x :halt false        :params { :alone 200 :held 200} } ]
+      [ :right_command nil nil
+         { :alone :p
+           :held  :x :halt false        :params { :alone 200 :held 200} } ]
+      [ :a :!Cleft_arrow]
+      [ :y :!Sright_arrow]
+      ]
+    }
+   { :des  "FinalCut"
+    :rules
+    [
+      [ :condi  :finalcut :appl  ]
+      [ :escape [:km "toggle Full screen"]]
+      [ :##non_us_backslash   ["finalcut-1" 1]   ["finalcut-1" 0] ]
+      [ :##non_us_backslash   ["finalcut-1" 0]   ["finalcut-1" 1] ]
+      ]
+    }
+   { :des  "FinalCut Layer 1 Apple"
+    :rules
+    [
+      [ :condi  :finalcut-1  :finalcut :appl  ]
+      [ :grave_accent_and_tilde            :!COS1    ]
+      [ :y           :!COS2    ]
+      [ :x           :!COS3    ]
+      [ :c           :!COS4    ]
+      [ :v           :!COS5    ]
+      [ :b           :!COS6    ]
+      [ :a           :!TCOS1   ]
+      [ :s           :!TCOS2   ]
+      [ :d           :!TCOS3   ]
+      [ :f           :!TCOS4   ]
+      [ :g           :!TCOS5   ]
+      [ :h           :!TCOS6   ]
+       ]
+    }
+  { :des  "Finder"
+    :rules
+    [
+      [ :condi :finder ]
+      [ :!Ch
+        :!SCh   "Go Home"
+        ]
+      ]
+    }
+  { :des  "PDF Expert"
+    :rules
+    [
+      [ :condi :pdf ]
+      [ :!Ch
+        :!SCh   "Go Home"
+        ]
+      ]
+    }
+  { :des  "firefox"
+    :rules
+    [
+       [ :condi  :firefox  ]
+       [ :##left_shift             [:km "dlp discard"]         [:moon :move]   ]
+       [ :##left_command      [:km "dlp run"]             [:moon :move]   ]
+       [ :##spacebar     :lazy_shift         [:appl :move]      { :alone [:!Cl :!Cc :tab]      :params { :alone 300 } } ]
+       [ :m     :!SCm         [:appl :move]   "picker mode"]
+       [ :k     :!SCk         [:appl :move]   "zapper mode" ]
+       [ :right_shift             :!Cw ]
+       [ :backslash               nil nil
+         { :alone [:km "dlp discard"]
+           :held  [:km "dlp import and append"]           :params {:alone 200 :held 200}} ]
+       [ :close_bracket           nil nil
+         { :alone [:km "dlp run"]
+           :held  [:km "dlp click"]           :params {:alone 200 :held 200}} ]
+      ]
+    }
+  { :des  "iterm"
+     :rules
+     [
+       [ :condi  :iterm :appl ]
+       [ :f1                 :!COp                 ]
+       ]
+     }
+   { :des "jetbrains"
+     :rules
+     [
+       [ :condi  :jetbrains ]
+       [ :!C1    nil     nil      {:alone :!C1  :held [:km "Show Tool Window Options"]  :params {:alone 200 :held 200}} ]
+       [ :!Cf             nil      nil        {:alone :!Cf  :held [:km "Search and Select"]  :params {:alone 200 :held 200}} ]
+       ]
+     }
+   {
+     :des "jetbrains moon"
+     :rules
+     [
+       [ :condi  :jetbrains :moon]
+       [ :f5             :!Cbackslash          "toggle line comment" ]
+       [ :f11              :!Tr                 "run" ]
+       [ :!Sf11            :!TOr                "select run"  ]
+       [ :f12   :!Treturn_or_enter   ]
+       [ :##left_shift     :##left_shift         :move   { :alone :!SCa    :params { :alone 300 } } ]
+      ]
+    }
+   { :des  "jetbrains appl"
+     :rules
+     [
+       [ :condi             :editor          :appl   :!super                  ]
+         [ :!Chyphen          [:km "Toggle Jupyter"]
+           "'cmd ?' to Jupyter Tool Window"             ]
+         [ :backslash     :!Cbackslash
+           "toggle line comment"                        ]
+         [ :right_shift    nil  nil
+                            { :alone :!Tr
+                              :held  :!TOr :params { :alone 200 :held 200} } ]
+         [ :1  nil  nil { :alone :1 :held  :!C1 :params { :alone 200 :held 200} } ]
+         [ :2  nil  nil { :alone :2 :held  :!C2 :params { :alone 200 :held 200} } ]
+         [ :3  nil  nil { :alone :3 :held  :!C3 :params { :alone 200 :held 200} } ]
+         [ :4  nil  nil { :alone :4 :held  :!C4 :params { :alone 200 :held 200} } ]
+         [ :5  nil  nil { :alone :5 :held  :!C5 :params { :alone 200 :held 200} } ]
+         [ :6  nil  nil { :alone :6 :held  :!C6 :params { :alone 200 :held 200} } ]
+         [ :7  nil  nil { :alone :7 :held  :!C7 :params { :alone 200 :held 200} } ]
+         [ :8  nil  nil { :alone :8 :held  :!C8 :params { :alone 200 :held 200} } ]
+         [ :9  nil  nil { :alone :9 :held  :!C9 :params { :alone 200 :held 200} } ]
+         [ :0  nil  nil { :alone :0 :held  :!C0 :params { :alone 200 :held 200} } ]
+         [ :!S1  nil  nil { :alone :!S1 :held  :!C1 :params { :alone 200 :held 200} } ]
+         [ :!S2  nil  nil { :alone :!S2 :held  :!C2 :params { :alone 200 :held 200} } ]
+         [ :!S3  nil  nil { :alone :!S3 :held  :!C3 :params { :alone 200 :held 200} } ]
+         [ :!S4  nil  nil { :alone :!S4 :held  :!C4 :params { :alone 200 :held 200} } ]
+         [ :!S5  nil  nil { :alone :!S5 :held  :!C5 :params { :alone 200 :held 200} } ]
+         [ :!S6  nil  nil { :alone :!S6 :held  :!C6 :params { :alone 200 :held 200} } ]
+         [ :!S7  nil  nil { :alone :!S7 :held  :!C7 :params { :alone 200 :held 200} } ]
+         [ :!S8  nil  nil { :alone :!S8 :held  :!C8 :params { :alone 200 :held 200} } ]
+         [ :!S9  nil  nil { :alone :!S9 :held  :!C9 :params { :alone 200 :held 200} } ]
+         [ :!S0  nil  nil { :alone :!S0 :held  :!C0 :params { :alone 200 :held 200} } ]
+       [ :condi             :jetbrains         :appl              :move ]
+         [ :##q               :!Tleft_arrow
+           "Previous Tab"]
+         [ :##e               :!Tright_arrow
+           "next Tab"                               ]
+         [ :##u               :!OCz
+           "reload all from disk"]
+         [ :##spacebar        :lazy_shift
+           "Find Action"
+                            { :alone :!SCa     :params { :alone 300 } } ]
+         [ :##left_command    :##left_command
+           "Cycle Windows"
+                            { :alone :!Ce      :params { :alone 300 } } ]
+       [ :##f1                 :##f1                 ]
+       [ :##f2                 :##f2                 ]
+       [ :##f3                 :##f3                 ]
+       [ :##f4                 :##f4                 ]
+       [ :##f5                 :##f5                 ]
+       [ :##f6                 :##f6                 ]
+       [ :##f7                 :##f7                 ]
+       [ :##f8                 :##f8                 ]
+       [ :##f9                 :##f9                 ]
+       [ :##f10                :##f10                ]
+       [ :##f11                :##f11                ]
+       [ :##f12                :##f12                ]
+       [ :1 nil nil
+         { :alone :!S1
+           :held  :1        :params { :alone 200 :held 200} } ]
+       [ :2 nil nil
+         { :alone :!S2
+           :held  :2 :halt false        :params { :alone 200 :held 200} } ]
+       [ :3 nil nil
+         { :alone :!S3
+           :held  :3 :halt false        :params { :alone 200 :held 200} } ]
+       [ :4 nil nil
+         { :alone :!S4
+           :held  :4 :halt false        :params { :alone 200 :held 200} } ]
+       [ :5 nil nil
+         { :alone :!S5
+           :held  :5 :halt false        :params { :alone 200 :held 200} } ]
+       [ :6 nil nil
+         { :alone :!S6
+           :held  :6 :halt false        :params { :alone 200 :held 200} } ]
+       [ :7 nil nil
+         { :alone :!S7
+           :held  :7 :halt false        :params { :alone 200 :held 200} } ]
+       [ :8 nil nil
+         { :alone :!S8
+           :held  :8 :halt false        :params { :alone 200 :held 200} } ]
+       [ :9 nil nil
+         { :alone :!S9
+           :held  :9 :halt false        :params { :alone 200 :held 200} } ]
+       [ :0 nil nil
+         { :alone :!S0
+           :held  :0 :halt false        :params { :alone 200 :held 200} } ]
+      ]
+    }   { :des  "app launcher appl"
+     :rules
+     [
+       [ :condi
+          :hot
+           :appl ]
+       [ :1                 nil  nil
+         { :alone :!TC1
+           :held  :!TOr :params { :alone 200 :held 200} } ]
+      ]
+    }
+   { :des  "special layer moon"
+     :rules
+     [ [ :condi :special :moon]
+       [ :3                    :grave_accent_and_tilde    " < " ]
+       [ :e                    :!O5                       " [ " ]
+       [ :d                    :!S8                       " ( " ]
+       [ :c                    :!O8                       " { " ]
+       [ :4                    :!Sgrave_accent_and_tilde  " > " ]
+       [ :r                    :!O6                       " ] " ]
+       [ :f                    :!S9                       " ) " ]
+       [ :v                    :!O9                       " } " ]
+       [ :a                    :!S7                       " / " ]
+       [ :delete_or_backspace  :!SO7                      "\\ " ]
+       [ :f17                  :!O7                       " | " ]
+       [ :x                    :slash                     " - " ]
+       [ :s                    :!Sslash                   " _ " ]
+       [ :f3                   :!On                       " ~ " ]
+       [ :j                    :!Sbackslash               " ' " ]
+       [ :u                    :!S2                       "\" " ]
+       [ :7                    :equal_sign                " ´ " ]
+       [ :n                    :!Sequal_sign              " ` " ]
+       [ :b                    :!S5                       " % " ]
+       [ :q                    :!S0                       " = " ]
+       [ :g                    :!S6                       " & " ]
+       [ :w                    :close_bracket             " + " ]
+       [ :!Sw                  :!Sclose_bracket           " * " ]
+       [ :v                    :period                    " . " ]
+       [ :!Sv                  :!Speriod                  " : " ]
+       [ :c                    :comma                     " , " ]
+       [ :!Sc                  :!Scomma                   " ; " ]
+       [ :c                    :!Ol                       " @ " ]
+       [ :1                    :!S1                       " ! " ]
+       [ :t                    :!Shyphen                  " ? " ]
+       [ :semicolon            :backslash                 " # " ]
+       [ :2                    :backslash                 " # " ]
+       [ :!C3                  :!S4                       " $ " ]
+       [ :!C3                  :!Oe                       " € " ]
+       [ :!Cx                  :##non_us_backslash        " ^ " ]
+       [ :!Sx                  :!Snon_us_backslash        " ° " ]
+       [ :left_shift :!Ctab       ]
+     ]
+    }
+   { :des  "move moon"
+     :rules
+     [ [ :condi :move :moon ]
+       [ :##s                 :##left_arrow      ]
+       [ :##d                 :##down_arrow      ]
+       [ :##e                 :##up_arrow        ]
+       [ :##f                 :##right_arrow     ]
+       [ :##t                 :##page_up         ]
+       [ :##g                 :##page_down       ]
+       [ :##w                 :!STtab            ]
+       [ :##r                 :!Ttab             ]
+       [ :##c                 :!Ff19             ]
+       [ :##tab              [ :!Ctab   ["AppSwitcher" 1] :command_held ]          ]
+       [ :##k              :##down_arrow      ]
+       [ :##i                :##up_arrow        ]
+       [ :##j              :##left_arrow      ]
+       [ :##l             :##right_arrow        ]
+      ]
+    }
+   { :des  "special layer appl"
+     :rules
+     [
+       [ :slash nil nil { :alone     :slash
+                          :held    :!Sslash
+                                    :params {:alone 200 :held 200}}]
+       [ :period nil nil { :alone   :period
+                           :held  :single_colon
+                                    :params {:alone 200 :held 200}}]
+       [ :comma nil nil {:alone      :comma
+                         :held     :!Scomma :halt false
+                                    :params {:alone 200 :held 200}}]
+       [ :condi :special  :appl       ]
+       [ :!Sa                  :!S7                       " / " ]
+       [ :a                    :!SO7                      "\\ " ]
+       [ :!Ca                  :!O7                       " | " ]
+       [ :s                    :slash                     " - " ]
+       [ :!Ss                  :!Sslash                   " _ " ]
+       [ :c                    :!On                       " ~ " ]
+       [ :d                    :!Sbackslash               " ' " ]
+       [ :!Sd                  :!S2                       "\" " ]
+       [ :!Cd                  :equal_sign                " ´ " ]
+       [ :!Od                  :!Sequal_sign              " ` " ]
+       [ :h                    :!S5                       " % " ]
+       [ :q                    :!S0                       " = " ]
+       [ :z                    :!S6                       " & " ]
+       [ :w                    :close_bracket             " + " ]
+       [ :!Sw                  :!Sclose_bracket           " * " ]
+       [ :period               :period                    " . " ]
+       [ :!Speriod             :!Speriod                  " : " ]
+       [ :comma                :comma                     " , " ]
+       [ :!Scomma              :!Scomma                   " ; " ]
+       [ :e                    :!S8                       " ( " ]
+       [ :!Se                  :!O5                       " [ " ]
+       [ :!Ce                  :!O8                       " { " ]
+       [ :!Te                  :grave_accent_and_tilde    " < " ]
+       [ :r                    :!S9                       " ) " ]
+       [ :!Sr                  :!O6                       " ] " ]
+       [ :!Cr                  :!O9                       " } " ]
+       [ :y                    :!Sgrave_accent_and_tilde  " > " ]
+       [ :x                    :!Ol                       " @ " ]
+       [ :1                    :!S1                       " ! " ]
+       [ :o                    :!Shyphen                  " ? " ]
+       [ :2                    :backslash                 " # " ]
+       [ :j                    :!S4                       " $ " ]
+       [ :b                    :!Oe                       " € " ]
+       [ :!Cx                  :##non_us_backslash        " ^ " ]
+       [ :!Sx                  :!Snon_us_backslash        " ° " ]
+       [ :tab                  :!Otab                           ]
+       [ :##left_arrow         :!Oleft_arrow                    ]
+       [ :##down_arrow         :!Odown_arrow                    ]
+       [ :##up_arrow           :!Oup_arrow                      ]
+       [ :##right_arrow        :!Oright_arrow                   ]
+      ]
+    }
+   { :des  "move apple"
+     :rules
+     [ [ :condi :move :appl ]
+       [ :##a                :##left_arrow      ]
+       [ :##s                :##down_arrow      ]
+       [ :##w                :##up_arrow        ]
+       [ :##d                :##right_arrow     ]
+       [ :##q                :!STtab            ]
+       [ :##e                :!Ttab             ]
+       [ :##x                :!STr              ]
+       [ :##c                :!SC0              ]
+       [ :##2                :!Cw     ]
+       [ :##non_us_backslash       :!Cnon_us_backslash        ]
+       [ :##3                :!Cw               ]
+       [ :tab              :!Ctab             ]
+       [ :##r                :##page_up         ]
+       [ :##f                :##page_down       ]
+       [ :##l                 :##left_arrow      ]
+       [ :##semicolon                :##down_arrow      ]
+       [ :##p                :##up_arrow        ]
+       [ :##quote                :##right_arrow     ]
+       [ :##backslash           :lazy_option      nil    {:alone :!Ctab         :params {:alone 200}} ]
+       [ :##left_arrow         :!Oleft_arrow                    ]
+       [ :##down_arrow         :!Odown_arrow                    ]
+       [ :##up_arrow           :!Oup_arrow                      ]
+       [ :##right_arrow        :!Oright_arrow                   ]
+      ]
+    }
+  { :des  "disabled keys appl"
+     :rules
+     [ [ :condi :appl]
+       [ :!Ctab   :vk_none]
+      ]
+    }
+   { :des  "moon other"
+     :rules
+     [ [ :condi  :moon ]
+       [ :!Cf11    :!Cclose_bracket   ]
+       [ :!Cf12    :!Cslash     ]
+       [ :f23       :period     ]
+      ]
+    }
+   { :des  "moon modifier"
+     :rules
+     [ [ :condi :moon]
+       [ :##f17                          ["special" 1]     nil    {:alone :!Cy                    :afterup ["special" 0]  :params {:alone 200}} ]
+       [ [ :left_shift :left_command ]   ["special" 1]     nil    {:afterup ["special" 0]         :params {:sim 100 }} ]
+       [ :##delete_or_backspace          ["move" 1]        nil    {:alone :##delete_or_backspace  :afterup ["move" 0]     :params {:alone 200}} ]
+       [ :##spacebar                     ["special" 1]     nil    {:alone :spacebar               :afterup ["special" 0]  :params {:alone 300}} ]
+       [ :##left_command                 :lazy_command     nil    {:alone :##return_or_enter      :params {:alone 150}} ]
+       [ :##left_shift                   :lazy_shift       nil    {:alone :spacebar               :params {:alone 300}} ]
+       [ :##left_control                 :lazy_control     nil    {:alone :##tab                  :params {:alone 150}} ]
+       [ :##left_option                  :lazy_option      nil    {:alone :escape                 :params {:alone 150}} ]
+      ]
+    }
+   { :des  "modifier apple"
+     :rules
+     [ [ :condi :appl  ]
+       [ :##caps_lock            [["move" 1] ["super" 1]]                nil    {:alone :##delete_or_backspace  :afterup [["move" 0] ["super" 0]]     :params {:alone 200}} ]
+       [ :##left_shift              [["special" 1] ["super" 1]]        nil    {:alone :!Cy     :afterup [["special" 0] ["super" 0]] } ]
+       [ :##spacebar             :lazy_shift               nil    {:alone :##spacebar               :params {:alone 300}} ]
+       [ :##left_command         :##left_command           nil    {:alone :##return_or_enter      :params {:alone 200}} ]
+       [ :##right_command        :lazy_command             nil    {:alone [:km "Activate last Application"]              :params { :alone 200 } } ]
+       [ :##left_option          :##left_option            nil    {:alone :!Cy} ]
+       [ :##right_option         :##left_option            nil    {:alone :##tab} ]
+       [ :##left_control          ["hot" 1]               ["fn" 1] {:afterup ["hot" 0]  :held ["fn" 0] :params {:held 1300} }  ]
+       [ :##left_control          ["hot" 1]               ["fn" 0] {:afterup ["hot" 0]  :held ["fn" 1] :params {:held 1300} }  ]
+       [ :##fn                   :##left_control   ]
+      ]
+    }
+   { :des  "number remap and cmd v hold"
+     :rules
+     [
+       [ :!Cv    nil     nil
+         {:alone :!Cv
+          :held :!CSv :params {:alone 200 :held 200}} ]
+       [ :!CSv    :!TC1    nil "'autofill 1password'" ]
+       [ :l    [:!Cl :!Cc]     [:firefox :special]   ]
+       [ :!S1                    :!C1 ]
+       [ :!S2                    :!C2 ]
+       [ :!S3                    :!C3 ]
+       [ :!S4                    :!C4 ]
+       [ :!S5                    :!C5 ]
+       [ :!S6                    :!C6 ]
+       [ :!S7                    :!C7 ]
+       [ :!S8                    :!C8 ]
+       [ :!S9                    :!C9 ]
+      ]
+    }
+   { :des  "display"
+     :rules
+     [
+       [  [:f1 :f2]        :!Cdisplay_brightness_decrement  ]
+       [  [:f2 :f3]        :!Odisplay_brightness_decrement  ]
+       [ [:f1 :f2 :f3]     nil nil {:alone   [:km "Sleep Displays"]
+                                     :held   [:km "Start Screen Saver"]
+                                     :params {:alone 200 :held 200}}]
+       [ :f1    :!!f1         ]
+       [ :f2    :!!f2         ]
+      ]
+    }
+   { :des  "screenshor appl"
+     :rules
+     [ [ :condi :appl ]
+       [ :f3     nil   :appl        {:alone  [:km "Toggle Keyboard Illuination"]
+                                     :held   [:km "Toggle Desktop"]
+                                     :params {:alone 200 :held 200}}]
+       [ :!Cf4   :!CS5 ]
+       [ :f4      nil   nil   {:alone    :!CS4
+                               :held     :!CS3
+                               :params {:alone 150 :held 200}} ]
+       [ :!Cf4    nil   nil   {:alone    :!TCS4
+                               :held     :!TCS3
+                               :params {:alone 150 :held 200}} ]
+      ]
+    }
+   { :des  "audio appl"
+     :rules
+     [ [ :condi :appl ]
+       [ [:f11 :f12]         nil nil
+         { :alone [:hass "main heat"]
+           :held  [:hass "bathroom heat"]            :params {:alone 200 :held 200}} ]
+       [ :f11         :!SOvolume_decrement ]
+       [ :#SRf11      :volume_decrement ]
+       [ :f12         :!SOvolume_increment ]
+       [ :#SRf12      :volume_increment ]
+       [ :f10          [:km "Auto Switch Audio"] ]
+       [ :#SRf10       [:audio "RODE NT-USB" "Out: Optical"] ]
+      ]
+    }
+   { :des  "homeassistant appl"
+     :rules
+     [ [ :condi :appl ]
+       [ :f6         nil nil
+         { :alone [:hass "laptop automation"]
+           :held  [:hass "Back OFF"]            :params {:alone 200 :held 200}} ]
+       [ :f7         [:hass "less wind"]         ]
+       [ :f8         [:hass "change wind"]       ]
+       [ :f9         [:hass "more wind"]         ]
+      ]
+    }
+   { :des  "audio moon"
+     :rules
+     [ [ :condi :moon ]
+       [   :f3        :!SOvolume_decrement                                                ]
+       [   :f4        :!SOvolume_increment                                                ]
+       [ :!Sf3         [:audio "RODE NT-USB" "Out: Optical" ] ]
+       [ :!Sf4         [:audio "MacBook Pro Microphone" "MacBook Pro Speakers" ] ]
+       [ :!Tf3         [:audio-in "Dummy audio" ] ]
+       [ :!Tf4          [:km "Auto Switch Audio"] ]
+      ]
+    }
+   { :des  "screenshot moon"
+     :rules
+     [ [ :condi  :moon ]
+       [ :f11    :!CS5  :special ]
+       [ :f11     nil   nil   {:alone    :!CS4
+                               :held     :!CS3
+                               :params {:alone 150 :held 200} } ]
+       [ :!Of11   nil   nil   {:alone    :!TCS4
+                               :held     :!TCS3
+                               :params {:alone 150 :held 200} } ]
+      ]
+    }
+   { :des  "homeassistant moon"
+     :rules
+     [ [ :condi :moon ]
+       [ :f21         [:hass "less wind"]         ]
+       [ [:f21 :f22]  [:hass "change wind"]       ]
+       [ :f22         [:hass "more wind"]         ]
+       [ :f13        [:hass "desk automation"]  nil {:delayed {:invoked [:km "toggle monitors"]}} ]
+      ]
+    }
+   { :des  "homeassistant remote emulator"
+     :rules
+     [ [ :condi  :disabeld  ]
+       [ :semicolon     [:hass "r: on_press"]     nil  {:afterup [:hass "r: on_press_release"]}   ]
+       [ :k             [:hass "r: up_press"]     nil  {:afterup [:hass "r: up_press_release"]}   ]
+       [ :l             [:hass "r: down_press"]   nil  {:afterup [:hass "r: down_press_release"]} ]
+       [ :backslash     [:hass "r: off_press"]    nil  {:afterup [:hass "r: off_press_release"]}  ]
+       [ :i             [:hass "r: colormode brightness"] ]
+       [ :o             [:hass "r: colormode temp"]       ]
+       [ :p             [:hass "r: colormode hue"]        ]
+       [ :open_bracket  [:hass "r: colormode saturation"] ]
+       ]
+     }
+   ]
+}

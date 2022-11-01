@@ -1,0 +1,62 @@
+Literature:
+-Lakoff, G., & Johnson, M. (1980). Metaphors we live by. Chicago: The University of Chicago Press.
+-Fauconnier, G., & Turner, M. (2002). The way we think: Conceptual blending and the mind's hidden complexities. New York: Basic Books.
+-Barnden, J. A. (2011). Artificial general intelligence 2nd ed.: Foundations of computational agents.(Vol. 1). Cambridge ; New York: Cambridge University Press
+-Kirsh, D. (2010). The intelligent use of space. Cambridge, Mass.: MIT Press.
+Bibtex:
+
+@book{lakoff1980metaphors,
+  title={Metaphors we live by},
+  author={Lakoff, George and Johnson, Mark},
+  year={1980},
+  publisher={Chicago: The University of Chicago Press}
+}
+@book{fauconnier2002way,
+  title={The way we think: Conceptual blending and the mind's hidden complexities},
+  author={Fauconnier, Gilles and Turner, Mark},
+  year={2002},
+  publisher={New York: Basic Books}
+}
+@book{barnden2011artificial,
+  title={Artificial general intelligence 2nd ed.: Foundations of computational agents},
+  author={Barnden, John A.},
+  volume={1},
+  year={2011},
+  publisher={Cambridge ; New York: Cambridge University Press}
+}
+@book{kirsh2010intelligent,
+  title={The intelligent use of space},
+  author={Kirsh, David},
+  year={2010},
+  publisher={Cambridge, Mass.: MIT Press}
+}
+
+Literature:
+-Barnden, J. A. (2001). Metaphor and Analogy in Artificial Intelligence. Dordrecht: Kluwer Academic Publishers.
+-Grady, J. E. (1997). The role of image schemas in the interpretation of metaphors and similes. In R. W. Gibbs & G. Steen (Eds.), Metaphor in cognitive linguistics: International conference on metaphor and cognition (pp. 79-92). Amsterdam: John Benjamins Publishing Company.
+Bibtex:
+
+@book{barnden2001metaphor,
+  title={Metaphor and Analogy in Artificial Intelligence},
+  author={Barnden, John A.},
+  year={2001},
+  publisher={Dordrecht: Kluwer Academic Publishers}
+}
+@inproceedings{grady1997role,
+  title={The role of image schemas in the interpretation of metaphors and similes},
+  author={Grady, Joseph E.},
+  booktitle={Metaphor in cognitive linguistics: International conference on metaphor and cognition},
+  pages={79--92},
+  year={1997},
+  organization={Amsterdam: John Benjamins Publishing Company}
+
+Literature:
+-Kövecses, Zoltán (2002). Metaphor: A practical introduction . Oxford University Press US.
+Bibtex:
+
+@book{kövecses2002metaphor,
+  title={Metaphor: A practical introduction},
+  author={Kövecses, Zoltán},
+  year={2002},
+  publisher={Oxford University Press US}
+}

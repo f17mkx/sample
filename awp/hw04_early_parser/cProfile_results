@@ -1,0 +1,54 @@
+The program spends the most time in the function add(), because tottime is the highest for this function.
+
+----------------------------------------------
+
+         52670300 function calls (45488125 primitive calls) in 20.825 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1017(_handle_fromlist)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 __init__.py:313(namedtuple)
+        5    0.000    0.000    0.000    0.000 __init__.py:385(<genexpr>)
+  6703360    2.024    0.000    4.629    0.000 __init__.py:400(_make)
+        3    0.000    0.000    0.000    0.000 _bootlocale.py:33(getpreferredencoding)
+        3    0.000    0.000    0.000    0.000 codecs.py:260(__init__)
+        3    0.000    0.000    0.000    0.000 codecs.py:309(__init__)
+      461    0.000    0.000    0.002    0.000 codecs.py:319(decode)
+        2    0.178    0.089    0.178    0.089 earley.py:105(<listcomp>)
+        2    0.000    0.000    0.000    0.000 earley.py:16(create_dict)
+        2    0.186    0.093   20.566   10.283 earley.py:28(parse)
+        1    0.007    0.007   20.825   20.825 earley.py:3(<module>)
+        2    0.023    0.011    0.023    0.011 earley.py:30(<listcomp>)
+   718214    0.442    0.000   20.356    0.000 earley.py:49(scan)
+1675842/957622    1.271    0.000   10.755    0.000 earley.py:60(predict)
+1197028/718216    3.737    0.000   18.593    0.000 earley.py:66(complete)
+        1    0.000    0.000    0.000    0.000 earley.py:7(Parser)
+6703360/718218    6.952    0.000   19.914    0.000 earley.py:74(add)
+        1    0.000    0.000    0.000    0.000 earley.py:8(__init__)
+  6703360    2.091    0.000    2.091    0.000 {built-in method __new__ of type object at 0x10c49e808}
+      461    0.002    0.000    0.002    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+      2/1    0.000    0.000   20.825   20.825 {built-in method builtins.exec}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+ 25137602    1.763    0.000    1.763    0.000 {built-in method builtins.len}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+        3    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        5    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        5    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        4    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       22    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        2    0.001    0.000    0.001    0.000 {method 'insert' of 'list' objects}
+        5    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        3    0.030    0.010    0.030    0.010 {method 'join' of 'str' objects}
+  3830490    2.075    0.000    2.075    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       24    0.041    0.002    0.041    0.002 {method 'split' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}

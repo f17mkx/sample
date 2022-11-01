@@ -1,0 +1,25 @@
+[
+ {
+  "name": "default",
+  "max_tokens": 150,
+  "n": 1,
+  "temperature": 0.7,
+  "top_p": 1.0,
+  "frequency_penalty": 1.0,
+  "presence_penalty": 1.0,
+  "stop": [],
+  "start_sequence": [],
+  "restart_sequence": []
+ },
+ {
+  "name": "bibtex_gen",
+  "kind": "completion",
+  "engine": "text-davinci-002",
+  "max_tokens": 1239,
+  "temperature": 0,
+  "top_p": 1,
+  "frequency_penalty": 1,
+  "presence_penalty": 1,
+  "stop": ["Literature:"]
+   }
+]

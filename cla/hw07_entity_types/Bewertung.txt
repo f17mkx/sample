@@ -1,0 +1,9 @@
+hw07_entity_types.test_entity_types.TestEntitiesTypes.test_01_read_word_vectors OK        2/2 points
+hw07_entity_types.test_entity_types.TestEntitiesTypes.test_02_read_entity_types_file OK        2/2 points
+hw07_entity_types.test_entity_types.TestEntitiesTypes.test_03_predict_evaluate OK        1/1 points
+hw07_entity_types.hidden_test_entity_types.TestEntitiesTypesHidden.test_01_read_word_vectors OK        2/2 points
+hw07_entity_types.hidden_test_entity_types.TestEntitiesTypesHidden.test_02_read_entity_types_file OK        2/2 points
+hw07_entity_types.hidden_test_entity_types.TestEntitiesTypesHidden.test_03_predict_evaluate OK        1/1 points
+hw07_entity_types.test_entity_types_large.TestEntitiesTypesLarge.test_04_predict_evaluate_large OK        2/2 points
+####################################
+TOTAL: 12/12 points
