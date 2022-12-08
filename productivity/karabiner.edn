@@ -22,7 +22,7 @@
              /opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t output -s '%s'"
      :audio-in  "/opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t input -s '%s'"
      :audio-out "/opt/homebrew/Cellar/switchaudio-osx/1.1.0/bin/SwitchAudioSource -t output -s '%s'"
-     :hass "curl -k -X POST -H 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' -H 'Content-Type: application/json' -d '{\"entity_id\": \"input_text.superpro_master\", \"value\": \"%s\"}' https://f17.duckdns.org:443/api/services/input_text/set_value"
+     :hass "curl -k -X POST -H 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' -H 'Content-Type: application/json' -d '{\"entity_id\": \"input_text.superpro_master\", \"value\": \"%s\"}' https://DOMAIN:PORT/api/services/input_text/set_value"
      :paste "osascript -e '
            set the clipboard to \"%s\"
            set the clipboard to the clipboard + \"%s\"
