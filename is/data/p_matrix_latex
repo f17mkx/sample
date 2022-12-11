@@ -1,0 +1,15 @@
+\begin{tabular}{lrrrrrrrr}
+\toprule
+cond2 &  bert &  gibbs\_cluster &  gpt3\_ada &  gpt3\_babbage &  gpt3\_curie &  gpt3\_davinci &  gpt3\_gibbs\_completion &  human\_label \\
+cond1                 &       &                &           &               &             &               &                        &              \\
+\midrule
+bert                  &   NaN &           0.03 &      0.00 &          0.03 &        0.03 &          0.00 &                   0.03 &         0.03 \\
+gibbs\_cluster         &  0.38 &            NaN &      0.02 &          0.38 &        0.38 &          0.01 &                   0.38 &         0.38 \\
+gpt3\_ada              &  0.86 &           0.86 &       NaN &          0.86 &        0.86 &          0.38 &                   0.86 &         0.86 \\
+gpt3\_babbage          &  0.00 &           0.00 &      0.00 &           NaN &        0.00 &          0.00 &                   0.00 &         0.00 \\
+gpt3\_curie            &  0.00 &           0.00 &      0.00 &          0.00 &         NaN &          0.00 &                   0.00 &         0.00 \\
+gpt3\_davinci          &  0.16 &           0.16 &      0.16 &          0.16 &        0.16 &           NaN &                   0.16 &         0.16 \\
+gpt3\_gibbs\_completion &  0.00 &           0.00 &      0.00 &          0.00 &        0.00 &          0.00 &                    NaN &         0.00 \\
+human\_label           &  0.01 &           0.01 &      0.00 &          0.01 &        0.01 &          0.00 &                   0.01 &          NaN \\
+\bottomrule
+\end{tabular}

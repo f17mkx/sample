@@ -1,0 +1,89 @@
+EXPERIMENT 2:
+Participants in this study sorted 35 uses of stand into different groups based on their similarity of meaning. Our main hypothesis was that the participants would, most generally, group together instances of stand that shared similar image schema profiles.
+Experiment 3 provides the main test of this idea. The simple aim of Experiment 2 was first to assess people's judgments of similarity of meaning for different senses of stand.
+Method
+Subjects
+Twenty-seven undergraduates from the University of California, Santa Cruz, participated as a subjects to fulfil a course requirement. All subjects were native speakers of English. These subjects did not participate in Experiment I
+Materials and design 35 different uses of stand were printed on 3 X 5 cards, one sense per card. These 35 senses were selected from the Oxford English Dictionary, the Kucera & Francis (1975) corpus, and from our intuitions. We specifically attempted to obtain wide range of uses for stand, including both physical and nonphysical senses. However, we do not claim that these 35 uses represent entirely different senses nor do the 35 uses reflect all aspects of how stand is used in contemporary speech and writing. Table 3 presents list of all 35 senses of stand.
+Table 3 35 senses of stand used in Experiment 2
+stand at attention
+stand out in several sports
+to stand firm
+don't stand for such treatment
+to stand the test of time
+united we stand
+we stand on 30 years of experience
+let the issue stand
+let the mixture stand
+get stood up for a date
+he stands six-foot nine
+the clock stands on the mantle
+one-night stand
+to stand to profit
+to stand in someone else's shoes
+on the witness stand
+stand in awe
+the police told them to stand back
+stand by your man
+the engine can't stand the constant wear
+stand on shaky ground
+to stand accused
+the house stands in the clearing
+the barometer stands at 30 inches
+as the matter now stands
+the part stands for the whole
+it stands to reason
+they did nothing but stand around
+to stand against great odds
+a standing ovation
+the boss always stands over me
+he stands committed
+Procedure
+Each participant was presented with the 35-card stack and asked to sort all the cards into five piles based on surface similarity. Five stacks were specified to constrain the task sufficiently to allow the participant to complete the sorting task in relatively short period of time. No minimum numbers of cards per stack was specified and the participants were told that cards did not have to be evenly distributed among the piles.
+Results and discussion
+The sorting data for each participant were tallied. These results were then converted into a matrix in which each cell represents the number of times two senses of stand were assigned to the same pile summed across all the participants.' We used a hierarchical agglomerative cluster analysis method to explore participants' groupings of similar senses of stand (Aldenderfer & Blashfield 1984). Because we wished our analysis to be sensitive to closely spaced clusters, the SAS Cluster procedure employed Ward's method (SAS Institute 1983).? The number of clusters in the data was determined by inspecting the fusion coefficients and solving the inequality as suggested by Aldenderfer & Blashfield (1984: 57). Although a three-cluster solution clearly met the stopping criteria, a four-cluster solution was reasonably close.
+We used multidimensional scaling to help illuminate the analysis (Jackson 1983). Multidimensional scaling 1S a procedure designed to analyse similarity ratings or judgments made by individual participants. Because we assumed the associations across senses of stand are based on physical experience and are common across native speakers, our analysis averaged rating across subjects. The ALSCAL procedure (SAS Institute 1985) solved up to five-dimensional space. The Kruskal stress levels, an index of the n -dimensional solution's ability to account for the data, ranged from 0.53 for the one-dimensional solution to 0. 10 for the five-dimensional solution. Guided by Jackson's criteria of an elbow in stress reduction, the three-dimensional solution was judged to be the most parsimonious choice (Kruskal stress level 0.16). This provided additional evidence that senses of stand were grouped into three, rather than four, important clusters. A scatterplot of linear fit confirmed that the three dimensional solution was linear and non-degenerate.
+Drawing from both sets of analyses reported above, we chose the threecluster solution as the most appropriate representation of the similarities of meaning for the 32 senses of stand. Table 4 presents a list of the three groups of stand senses that emerged from the above analyses. It is important to note here that the individual senses have complex spatial relationships to each other (i.e. are judged as having different degrees of similarity of meaning to each other) that are not shown by simply providing the three main clusters of senses from the cluster analysis.
+A preliminary examination of the three groups clearly shows that the participants did not sort physical senses of stand separately from the non-physical or figurative senses. For example, the physical idea of standing in to stand at attention was often grouped together with metaphorical senses of stand as in let the issue stand and to stand the test of time. It is difficult, though, to discern a single, abstract meaning that underlies the uses of stand in either the three groupings or among all the 32 uses of stand studied in this experiment. A more
+Table 4 Result of clustering analysis in Experiment 2
+expression | cluster
+stand at attention | 1
+stand out in several sports | 1
+to stand firm | 2
+don't stand for such treatment | 1
+to stand the test of time | 1
+united we stand | 2
+we stand on 30 years of experience | 2
+let the issue stand | 1
+let the mixture stand | 1
+get stood up for a date | 3
+he stands six-foot nine | 3
+the clock stands on the mantle | 2
+one-night stand | 1
+to stand to profit | 2
+to stand in someone else's shoes | 2
+on the witness stand | 1
+stand in awe | 2
+the police told them to stand back | 1
+stand by your man | 3
+the engine can't stand the constant wear | 3
+stand on shaky ground | 2
+to stand accused | 3
+the house stands in the clearing | 3
+the barometer stands at 30 inches | 3
+as the matter now stands | 3
+the part stands for the whole | 3
+it stands to reason | 3
+they did nothing but stand around | 3
+to stand against great odds | 3
+a standing ovation | 1
+the boss always stands over me | 1
+he stands committed | 1
+likely possibility is that the different uses of stand are related to one another through a set of complex semantic relations that are partly motivated by various image schemas. The next study investigates this possibility.
+
+
+1. Calculate Embeddings and generate 3 Clusters
+2. Fill the table with your results:
+
+expression | cluster
+stand at attention |

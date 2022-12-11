@@ -1,0 +1,57 @@
+,cond1,cond2,t,p,value_remap_1,value_remap_2
+0,gibbs_cluster,gpt3_gibbs_completion,0.8915558282417286,0.3794992061837489,"[1, 2, 3]",<zip object at 0x2fb354ac0>
+1,gibbs_cluster,gpt3_ada,2.4406685037296727,0.02057057260592289,"[1, 2, 3]",<zip object at 0x2fb354c00>
+2,gibbs_cluster,gpt3_babbage,0.8915558282417286,0.3794992061837489,"[1, 2, 3]",<zip object at 0x2fb3643c0>
+3,gibbs_cluster,gpt3_curie,0.8915558282417286,0.3794992061837489,"[1, 2, 3]",<zip object at 0x2fb364a00>
+4,gibbs_cluster,gpt3_davinci,2.805614612563881,0.008598400487560923,"[1, 2, 3]",<zip object at 0x2fb364c80>
+5,gibbs_cluster,bert,0.8915558282417286,0.3794992061837489,"[1, 2, 3]",<zip object at 0x2fb364500>
+6,gibbs_cluster,human_label,0.8915558282417286,0.3794992061837489,"[1, 2, 3]",<zip object at 0x2fb364c00>
+7,gpt3_gibbs_completion,gibbs_cluster,5.357583756107197,7.702220856411295e-06,"[1, 2, 3]",<zip object at 0x2fb366140>
+8,gpt3_gibbs_completion,gpt3_ada,6.338366342550475,4.7025456800164025e-07,"[1, 2, 3]",<zip object at 0x2fb364ec0>
+9,gpt3_gibbs_completion,gpt3_babbage,5.357583756107197,7.702220856411295e-06,"[1, 2, 3]",<zip object at 0x2fb366cc0>
+10,gpt3_gibbs_completion,gpt3_curie,5.357583756107197,7.702220856411295e-06,"[1, 2, 3]",<zip object at 0x2fb366340>
+11,gpt3_gibbs_completion,gpt3_davinci,6.523138109719821,2.795196214448802e-07,"[1, 2, 3]",<zip object at 0x2fb354dc0>
+12,gpt3_gibbs_completion,bert,5.357583756107197,7.702220856411295e-06,"[1, 2, 3]",<zip object at 0x2fb366b80>
+13,gpt3_gibbs_completion,human_label,5.357583756107197,7.702220856411295e-06,"[1, 2, 3]",<zip object at 0x2fb366d40>
+14,gpt3_ada,gibbs_cluster,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb366980>
+15,gpt3_ada,gpt3_gibbs_completion,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb366a00>
+16,gpt3_ada,gpt3_babbage,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb366900>
+17,gpt3_ada,gpt3_curie,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367300>
+18,gpt3_ada,gpt3_davinci,0.8915558282417286,0.3794992061837489,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb364d00>
+19,gpt3_ada,bert,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb3676c0>
+20,gpt3_ada,human_label,0.1768658638749664,0.860764246493638,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367740>
+21,gpt3_babbage,gibbs_cluster,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367e40>
+22,gpt3_babbage,gpt3_gibbs_completion,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367180>
+23,gpt3_babbage,gpt3_ada,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367980>
+24,gpt3_babbage,gpt3_curie,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367cc0>
+25,gpt3_babbage,gpt3_davinci,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369480>
+26,gpt3_babbage,bert,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369140>
+27,gpt3_babbage,human_label,5.637801887844435,3.4505323643131713e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369540>
+28,gpt3_curie,gibbs_cluster,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369640>
+29,gpt3_curie,gpt3_gibbs_completion,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369b40>
+30,gpt3_curie,gpt3_ada,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369c00>
+31,gpt3_curie,gpt3_babbage,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369440>
+32,gpt3_curie,gpt3_davinci,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369500>
+33,gpt3_curie,bert,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb369040>
+34,gpt3_curie,human_label,5.299494268176219,9.098660220114668e-06,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b2c0>
+35,gpt3_davinci,gibbs_cluster,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b400>
+36,gpt3_davinci,gpt3_gibbs_completion,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b4c0>
+37,gpt3_davinci,gpt3_ada,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b6c0>
+38,gpt3_davinci,gpt3_babbage,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b8c0>
+39,gpt3_davinci,gpt3_curie,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b9c0>
+40,gpt3_davinci,bert,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b640>
+41,gpt3_davinci,human_label,1.4375905768565218,0.16056863389412462,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b3c0>
+42,bert,gibbs_cluster,2.265491189814215,0.030616618635485877,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36be80>
+43,bert,gpt3_gibbs_completion,2.265491189814215,0.030616618635485877,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36b200>
+44,bert,gpt3_ada,3.3038603114760283,0.0024123581464454602,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb366200>
+45,bert,gpt3_babbage,2.265491189814215,0.030616618635485877,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36c1c0>
+46,bert,gpt3_curie,2.265491189814215,0.030616618635485877,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36c340>
+47,bert,gpt3_davinci,3.644957377763735,0.0009692860948607031,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb367900>
+48,bert,human_label,2.265491189814215,0.030616618635485877,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36c940>
+49,human_label,gibbs_cluster,2.674667484725186,0.01183350537024447,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36cd40>
+50,human_label,gpt3_gibbs_completion,2.674667484725186,0.01183350537024447,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36cf00>
+51,human_label,gpt3_ada,4.051143629381999,0.0003168300739317434,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36c400>
+52,human_label,gpt3_babbage,2.674667484725186,0.01183350537024447,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36c580>
+53,human_label,gpt3_curie,2.674667484725186,0.01183350537024447,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36f740>
+54,human_label,gpt3_davinci,4.6254044360664395,6.266546591133554e-05,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36cf40>
+55,human_label,bert,2.674667484725186,0.01183350537024447,"[(0, 1), (1, 2), (2, 3)]",<zip object at 0x2fb36f540>

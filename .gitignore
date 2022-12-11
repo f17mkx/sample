@@ -1,10 +1,10 @@
 # Ignore everything in this directory
-*
+#*
 # Except
-.gitignore
-/awp
-/cla
-/productivity
-/robert
-/syb
-/is
+#/awp
+#/cla
+#/productivity
+#/robert
+#/syb
+#/is
+#.gitignore
